@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+//font
+$work-sans: 'Work Sans', sans-serif;
+
+//colors
+$white: #ffffff;
+$blue: #213f7d;
+$lightgreen: #39cdcc;
+$red: #E4033b;
+$green: #39cd62;
+$yellow: #e9b200;
+$purple: #df18ff;
+$fadedblue: #545f7d;
+
+//screen sizes
+$screen-sm: 460px;
+$screen-md: 768px;
+$screen-lg: 992px;
+$screen-xl: 1200px;
+
+//breakpoints
+@mixin sm {
+    @media (max-width: #{$screen-sm}){
+        @content;
+    }
+}
+
+@mixin md {
+    @media (max-width: #{$screen-md}){
+        @content;
+    }
+}
+
+@mixin lg {
+    @media (max-width: #{$screen-lg}){
+        @content;
+    }
+}
+
+
+
+
+
