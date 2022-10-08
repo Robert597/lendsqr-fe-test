@@ -1,0 +1,72 @@
+@import "../variables.scss";
+.dashboard{
+    width: 100w;
+    height: 100vh;
+    position: relative;
+
+    .dashboardHeader{
+        width: 100%;
+        height: 4rem;
+        position: fixed;
+        top: 0;
+        z-index: 3;
+    }
+    .dashboardSplitView{
+        position: relative;
+        display: flex;
+        margin-top: 4.2rem;
+
+        .dashboardContent{
+            padding: 40px;
+                & h1{
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 28px;
+                    line-height: 32px;
+                    color: $blue;
+                }
+        }
+    }
+    .dashboardBottom{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: space-between;
+        padding: 40px 0;
+
+        & .show_details{
+            color: $fadedblue;
+            font-style: normal;
+            line-height: 16px;
+
+            & .show_detail_icon{
+                background: #213f7d1a;
+                border-radius: 4px;
+                color: $blue;
+                display: inline-flex;
+                align-items: center;
+                gap: 10px;
+                font-size: 16px;
+                padding: 5px 10px;
+                margin: 0 10px;
+            }
+        }
+        & .pagination{
+            display: flex;
+            justify-content: space-evenly;
+            width: 30%;
+            color: $fadedblue;
+
+            & .page-next, .page-prev{
+                background: #213f7d1a;
+                border-radius: 4px;
+                color: $blue;
+                padding: 5px;
+            }
+
+            & .page-active{
+                color: $blue;
+            }
+        }
+    }
+}

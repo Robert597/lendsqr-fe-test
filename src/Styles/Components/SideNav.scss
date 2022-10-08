@@ -1,0 +1,77 @@
+@import "../variables.scss";
+
+.sideNav{
+    width: 290px;
+    background: $white;
+    box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
+    padding: 40px 0;
+
+    .side_nav{
+        & li:first-child{
+    font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 19px;
+font-family: $work-sans;
+color: $blue;
+margin-bottom: 20px;
+padding: 10px 20px;
+cursor: pointer;
+
+&:hover{
+    background-color: $fadedgreen;
+    border-left: 2px solid $green;
+    transition: .4s all ease-in;
+}
+        }
+
+        & li{
+            color: $fadedblue;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 19px;
+            font-family: $work-sans;
+margin-bottom: 10px;
+padding: 10px 20px;
+cursor: pointer;
+
+            &:hover{
+                background-color: $fadedgreen;
+                color: $blue;
+                border-left: 2px solid $green;
+                transition: .4s all ease-in;
+            }
+        }
+    }
+.main_nav{
+    padding: 20px 0;
+   & p{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    text-transform: uppercase;
+    color: $faded;
+    padding: 0 20px;
+    }
+
+    & li{
+        color: $fadedblue;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        font-family: $work-sans;
+padding: 20px 20px;
+cursor: pointer;
+
+&:hover{
+    background-color: $fadedgreen;
+    color: $blue;
+    border-left: 2px solid $green;
+    transition: .4s all ease-in;
+}
+    }
+}
+}

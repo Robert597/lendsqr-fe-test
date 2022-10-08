@@ -1,38 +1,46 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+@font-face {
+    font-family: Avenir;
+    src: url("../Font/Avenir/AvenirNextLTPro-Regular.otf");
+}
+
 
 //font
 $work-sans: 'Work Sans', sans-serif;
+$avenir: Avenir;
 
 //colors
 $white: #ffffff;
 $blue: #213f7d;
 $lightgreen: #39cdcc;
+$fadedgreen: rgba(57, 205, 204, 0.09);
 $red: #E4033b;
 $green: #39cd62;
 $yellow: #e9b200;
 $purple: #df18ff;
 $fadedblue: #545f7d;
+$faded: rgba(0, 0, 0, 0.4);
 
 //screen sizes
 $screen-sm: 460px;
-$screen-md: 768px;
-$screen-lg: 992px;
+$screen-md: 780px;
+$screen-lg: 1000px;
 $screen-xl: 1200px;
 
 //breakpoints
-@mixin sm {
+@mixin small { 
     @media (max-width: #{$screen-sm}){
         @content;
     }
 }
 
-@mixin md {
+@mixin medium {
     @media (max-width: #{$screen-md}){
         @content;
     }
 }
 
-@mixin lg {
+@mixin large {
     @media (max-width: #{$screen-lg}){
         @content;
     }
