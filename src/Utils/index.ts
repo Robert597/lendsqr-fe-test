@@ -11,7 +11,7 @@ import { RiFilePaper2Line} from "react-icons/ri";
 export const NavData1 = {
     title: "Customers",
     lists: [
-        {name: "Users",
+        {name: "users",
         icon: FaUsers
     },
         {name: "Guarantors",

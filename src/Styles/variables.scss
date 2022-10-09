@@ -18,13 +18,21 @@ $red: #E4033b;
 $green: #39cd62;
 $yellow: #e9b200;
 $purple: #df18ff;
+$lightPurple: rgba(223, 24, 255, 0.1);
 $fadedblue: #545f7d;
 $faded: rgba(0, 0, 0, 0.4);
+$iconBlue: #5718ff;
+$iconFadedBlue: rgba(87, 24, 255, 0.1);
+$orange: #f55f44;
+$lightorange: rgb(245, 95, 68, 0.1);
+$iconPurple: #ff3366;
+$lighticonpurple: rgba(255, 51, 102, 0.1);
 
 //screen sizes
 $screen-sm: 460px;
-$screen-md: 780px;
-$screen-lg: 1000px;
+$screen-s-md: 580px;
+$screen-md: 800px;
+$screen-lg: 1100px;
 $screen-xl: 1200px;
 
 //breakpoints
@@ -33,6 +41,13 @@ $screen-xl: 1200px;
         @content;
     }
 }
+
+@mixin intermediary { 
+    @media (max-width: #{$screen-s-md}){
+        @content;
+    }
+}
+
 
 @mixin medium {
     @media (max-width: #{$screen-md}){

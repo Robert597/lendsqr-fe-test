@@ -16,8 +16,15 @@
         display: flex;
         margin-top: 4.2rem;
 
+
         .dashboardContent{
+         width: 100%;
             padding: 40px;
+
+            @include medium{
+                padding: 40px 20px;
+            }
+
                 & h1{
                     font-style: normal;
                     font-weight: 500;
@@ -25,7 +32,23 @@
                     line-height: 32px;
                     color: $blue;
                 }
+
+               & .dashboard_top{
+                    display: flex;
+                    gap: 30px;
+                    width: 100%;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    padding: 40px 0;
+
+                    @include medium{
+                      justify-content: center;
+                    }
+                }
         }
+    }
+    & .tablecontainer{
+        position: relative;
     }
     .dashboardBottom{
         display: flex;
@@ -34,11 +57,21 @@
         justify-content: space-between;
         padding: 40px 0;
 
+        @include intermediary{
+            flex-direction: column-reverse;
+            align-items: center;
+            gap: 20px;
+        }
         & .show_details{
             color: $fadedblue;
             font-style: normal;
             line-height: 16px;
 
+            @include intermediary{
+                font-size: 18px;
+                width: 100%;
+                text-align: center;
+            }
             & .show_detail_icon{
                 background: #213f7d1a;
                 border-radius: 4px;
@@ -57,15 +90,36 @@
             width: 30%;
             color: $fadedblue;
 
+            @include intermediary{
+                width: 100%;
+            }
+
             & .page-next, .page-prev{
                 background: #213f7d1a;
                 border-radius: 4px;
                 color: $blue;
                 padding: 5px;
+                cursor: pointer;
             }
 
             & .page-active{
-                color: $blue;
+                color: $green;
+            }
+            .errorMessage{
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 16px;
+                gap: 30px;
+                color: $red;
+
+                & p:last-child{
+                    color: $blue;
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
             }
         }
     }

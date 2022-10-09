@@ -1,10 +1,23 @@
 @import "../variables.scss";
 
 .sideNav{
-    width: 290px;
     background: $white;
+    width: 250px;
     box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
     padding: 40px 0;
+    transition: all .5s ease-in-out;
+    overflow: hidden;
+
+    
+
+    @include large{
+        width: 50px;
+        .main_nav{
+            p {
+                display: none;
+            }
+        }
+    }
 
     .side_nav{
         & li:first-child{
@@ -17,6 +30,7 @@ color: $blue;
 margin-bottom: 20px;
 padding: 10px 20px;
 cursor: pointer;
+
 
 &:hover{
     background-color: $fadedgreen;
@@ -35,6 +49,19 @@ cursor: pointer;
 margin-bottom: 10px;
 padding: 10px 20px;
 cursor: pointer;
+display: flex;
+
+& .icon{
+    position: relative;
+    display: block;
+    min-width: 50px;
+ }
+
+ & .title{
+    position: relative;
+    display: block;
+    white-space: nowrap;
+ }
 
             &:hover{
                 background-color: $fadedgreen;
@@ -43,6 +70,7 @@ cursor: pointer;
                 transition: .4s all ease-in;
             }
         }
+       
     }
 .main_nav{
     padding: 20px 0;
@@ -54,6 +82,8 @@ cursor: pointer;
     text-transform: uppercase;
     color: $faded;
     padding: 0 20px;
+
+   
     }
 
     & li{
@@ -65,13 +95,66 @@ cursor: pointer;
         font-family: $work-sans;
 padding: 20px 20px;
 cursor: pointer;
+text-transform: capitalize;
+display: flex;
+width: 100%;
 
+ & .icon{
+    position: relative;
+    display: block;
+    min-width: 50px;
+ }
+
+ & .title{
+    position: relative;
+    display: block;
+    white-space: nowrap;
+ }
 &:hover{
     background-color: $fadedgreen;
     color: $blue;
     border-left: 2px solid $green;
     transition: .4s all ease-in;
 }
+    }
+
+    & .active {
+        background-color: $fadedgreen;
+        color: $blue;
+        border-left: 3px solid $green;
+        text-transform: capitalize;
+    } 
+}
+& .toggle {
+position: fixed;
+top: 50%;
+left: 40px;
+translate: translateY(-50%);
+width: 30px;
+height: 30px;
+background-color: $white;
+cursor: pointer;
+border: 4px solid $blue;
+border-radius: 50%;
+color: $fadedblue;
+display: none;
+align-items: center;
+justify-content: center;
+font-size: 16px;
+transition: all .5s ease-in-out;
+@include large{
+    display: flex;
+}
+}
+& .toggle_move{
+    left: 230px;
+}
+}
+.sidenav_open{
+width: 250px;
+.main_nav{
+    p {
+        display: block;
     }
 }
 }

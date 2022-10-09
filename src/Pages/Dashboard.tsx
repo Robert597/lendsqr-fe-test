@@ -32,27 +32,38 @@ const Dashboard = () => {
         <div className="dashboardContent">
         {loading && (<Loader/>)}
         {!loading && error?.isError && (
-        <div>
-          <p>{error?.errorMessage}</p>
+        <div className="errorMessage">
+          <p>Error: {error?.errorMessage}</p>
+          <p onClick={() => {
+            window.location.reload();
+          }}>Click Here To Reload</p>
         </div>
       )}
       {!loading && !error?.isError &&( <> 
         <h1>Users</h1>
+        <div className="dashboard_top">
         {
             dashboardDetails.map((detail, i) => (
+             
                 <DashboardDetail details={detail} key={i}/>
+               
             ))
         }
+ </div>
+      
+      <div className="tablecontainer">
+        <DashboardTable 
+        setShowModal={setShowModal} 
+        setOffset={setOffset}
+        offset={offset}
+        showModal={showModal}/>
 
-        {
+{
           showModal && (
             <FilterModal offset={offset}/>
           )
         }
-
-        <DashboardTable 
-        setShowModal={setShowModal} 
-        setOffset={setOffset}/>
+</div>
 
         <div className="dashboardBottom">
           

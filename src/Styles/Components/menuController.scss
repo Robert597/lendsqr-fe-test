@@ -1,0 +1,81 @@
+@import "../variables.scss";
+.menu{
+    display:none;
+  position: relative;
+
+  @include medium{
+    display: block;
+  }
+
+  & .MenuController{
+    font-size: 18px;
+    cursor: pointer;
+    color: $blue;
+  }
+
+  & .modal{
+    border-radius: 12px;
+    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+    border: 1px solid $fadedblue;
+    overflow: hidden;
+    padding: 0;
+    background: $white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    right: 1rem;
+    z-index: 2000;
+    user-select: none;
+    width: 180px;
+    height: 120px;
+    padding: 10px;
+
+    & hr{
+color: $faded;
+background-color: $faded;
+    }
+    .flex{
+        display: flex;
+        justify-content: space-between;
+        color: $blue;
+        padding: 10px;
+        
+    .avatar{
+        width: 48px;
+        height: 48px;
+        
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+    }
+
+    .avatar_name{
+        display: flex;
+        align-items: center;
+        gap: 10px; 
+        font-weight: 600;
+    }
+ }
+
+
+
+  }
+  & .absoluteChild{
+   
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease-in-out;
+    transform: "translateZ(0) scale(1)";
+              
+  }
+  & .showchild{
+    visibility: visible;
+    opacity: 1;
+    transition: all 0.5s ease-in-out;
+    transform: "translate3d(-60px,-100px,0) scale(.2)"};
+  }

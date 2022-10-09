@@ -1,0 +1,91 @@
+@import "../variables.scss";
+.detail_box{
+background: $white;
+border: 1px solid rgba(33, 63, 125, 0.06);
+box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+border-radius: 4px;
+padding: 30px 20px;
+width: 20%;
+height: 160px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+gap: 10px;
+
+@include medium{
+    width: 40%;
+}
+
+
+& .iconUser{
+    width: 40px;
+height: 40px;
+border-radius: 50%;
+color: $purple;
+background-color: $lightPurple;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+& .iconActive {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: $iconBlue;
+    background-color: $iconFadedBlue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+& .iconLoan{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: $orange;
+    background-color: $lightorange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+& .iconSavings{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: $orange;
+    background-color: $lightorange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+& h4{
+    font-weight: 500;
+font-size: 14px;
+line-height: 16px;
+text-transform: uppercase;
+color: $fadedblue;
+
+@include intermediary{
+    font-size: 12px;
+line-height: 14px;
+}
+}
+
+& p{
+    font-style: normal;
+font-weight: 600;
+font-size: 24px;
+line-height: 28px;
+text-transform: uppercase;
+color: $blue;
+
+@include intermediary{
+    font-size: 18px;
+line-height: 20px;
+}
+@include small{
+    font-size: 14px;
+line-height: 16px;
+}
+}
+}

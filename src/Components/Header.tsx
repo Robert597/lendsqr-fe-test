@@ -4,6 +4,7 @@ import User from "../Assets/user.png";
 import { FaSearch, FaRegBell} from "react-icons/fa";
 import {MdArrowDropDown} from "react-icons/md";
 import "../Styles/Components/header.scss";
+import MenuController from './MenuController';
 
 const Header = () => {
   return (
@@ -13,7 +14,7 @@ const Header = () => {
         </div>
 
         <div className="nav_search">
-            <input type="text" placeholder="Search for anything"/>
+            <input type="text" placeholder="Search"/>
             <button><FaSearch/></button>
         </div>
 
@@ -33,6 +34,7 @@ const Header = () => {
             </div>
         </div>
 
+      <MenuController/>
     </div>
   )
 }

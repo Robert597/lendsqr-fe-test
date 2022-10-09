@@ -1,0 +1,63 @@
+@import "../variables.scss";
+
+.filterModal{
+    width: 270px;
+    border: 1px solid rgba(84, 95, 125, 0.14);
+box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+border-radius: 4px;
+background-color: $white;
+top: 4rem;
+padding: 20px;
+
+& .filterInputContainer{
+    width: 100%;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+
+    & label{
+        font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: $fadedblue;
+    margin-bottom: 4px;
+    }
+
+    & select, input{
+        border: 1px solid rgba(33, 63, 125, 0.1);
+        border-radius: 8px;
+        padding: 10px 0;
+        font-family: $avenir;
+        color: $blue;
+
+        &:focus{
+            outline: 1px solid $blue;
+        }
+    }
+    & input{
+        padding: 10px 5px;
+    }
+}
+& .filterButtons{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+    & button{
+        background: $lightgreen;
+        border: 1px solid $lightgreen;
+        border-radius: 8px;
+        padding: 10px 25px ;
+        outline: none;
+        color: $white;
+    }
+
+    & button:first-child{
+        background-color: $white;
+        border: 1px solid $fadedblue;
+        color: $fadedblue;
+    }
+}
+}

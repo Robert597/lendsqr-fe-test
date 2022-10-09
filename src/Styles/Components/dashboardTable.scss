@@ -1,0 +1,221 @@
+ @import "../variables.scss";
+ .table{
+    position: relative;
+    @include medium{
+        display: block;
+        width: 100%;
+    }
+    & thead{
+        background: $white;
+        border: 1px solid rgba(33, 63, 125, 0.06);
+        box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+        @include medium{
+            display: none;
+        }
+
+        & th{
+            font-style: normal;
+            font-weight: 600;
+            font-size: 15px;
+            line-height: 22px;
+            color: $blue;
+            text-align: left;
+            padding: 15px 0;
+
+            @include large{
+                font-size: 12px;
+                line-height: 17px;
+            }
+        }
+    }
+    & tbody{
+        @include medium{
+            display: block;
+            width: 100%;
+        }
+        & tr{
+            color: #545f7d;
+            height: 100%;
+            line-height: 22px;
+            position: relative;
+            @include large{
+                font-size: 12px;
+                line-height: 17px;
+            }
+            @include medium{
+                tr:nth-child(even){
+                    background-color: #f5f5f5;
+                }
+                display: block;
+                width: 100%;
+                margin-bottom: 25px;
+            }
+           & td{
+                border-bottom: 1px solid rgba(33, 63, 125, 0.1);
+                padding: 20px 0;
+                font-size: 15px;
+            line-height: 22px;
+            color: $fadedblue;
+            cursor: pointer;
+
+            &:last-child{
+                border: none;
+            }
+          
+            @include large{
+                font-size: 12px;
+                line-height: 17px;
+            }
+            @include medium{
+                display: block;
+                width: 100%;
+                text-align: right;
+                padding-left: 50%;
+                position: inherit;
+                font-size: 18px;
+
+                &::before{
+                    content: attr(data-label);
+                    position: absolute;
+                    left: 0;
+                    width: 50%;
+                    padding-left: 10px;
+                    font-size: 18px;
+                    font-weight: bold;
+                    color: $blue;
+                    text-align: left;
+                }
+            }
+            @include intermediary{
+                font-size: 13px;
+                line-height: 16px;
+
+                &::before{
+                    font-size: 13px;
+                }
+            }
+            & .active {
+                background: rgba(57, 205, 98, 0.1);
+                color: $green;
+                border-radius: 100px;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 16px;
+                padding: 10px 15px;
+
+                @include large{
+                    font-size: 12px;
+                    line-height: 17px;
+                }
+                @include medium{
+                    font-size: 18px;
+                    line-height: 22px;
+                }
+                @include intermediary{
+                    font-size: 13px;
+                    line-height: 16px;
+                }
+               }
+               & .pending{
+                background: rgba(233, 178, 0, 0.1);
+
+                color: $yellow;
+                border-radius: 100px;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 16px;
+                padding: 10px 15px;
+
+                @include large{
+                    font-size: 12px;
+                    line-height: 17px;
+                }
+
+                @include medium{
+                    font-size: 18px;
+                    line-height: 22px;
+                }
+
+                @include intermediary{
+                    font-size: 13px;
+                    line-height: 16px;
+                }
+               }
+               & .inactive{
+                background: rgba(84, 95, 125, 0.1);
+                color: rgba(84, 95, 125, 1);
+                ;
+                border-radius: 100px;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 16px;
+                padding: 10px 15px;
+
+                @include large{
+                    font-size: 12px;
+                    line-height: 17px;
+                }
+
+                @include medium{
+                    font-size: 18px;
+                    line-height: 22px;
+                }
+
+                @include intermediary{
+                    font-size: 13px;
+                    line-height: 16px;
+                }
+               }
+               & .blacklisted{
+                background: rgba(228, 3, 59, 0.1);
+                color: rgba(228, 3, 59, 1);
+                ;
+                border-radius: 100px;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 16px;
+                padding: 10px 15px;
+
+                @include large{
+                    font-size: 12px;
+                    line-height: 17px;
+                }
+
+                @include medium{
+                    font-size: 18px;
+                    line-height: 22px;
+                }
+
+                @include intermediary{
+                    font-size: 13px;
+                    line-height: 16px;
+                }
+               }
+            }
+            & .tableIcons{
+                display: none;
+
+                @include medium{
+                    display: flex;
+                    justify-content: space-between;
+                    width: 100%;
+                    align-items: center;
+                    font-size: 16px;
+                    line-height: 22px;
+                    color: $blue;
+                    border-bottom: 1px solid rgba(33, 63, 125, 0.1);
+                }
+            }
+           & .tableIcon{
+            color: $blue;
+            position: relative;
+             @include medium{
+                display: none;
+             }
+           }
+
+          
+
+        }
+    }
+ }

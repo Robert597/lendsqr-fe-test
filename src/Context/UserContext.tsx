@@ -42,7 +42,14 @@ const[userDetail, setUserDetail] = useState<UserData>({});
 const[paginatedData, setPaginatedData] = useState<UserData[] | []>([]);
 
 const[pageNumber, setPageNumber] = useState<number>(0);
-const usersPerPage = 10;
+const[usersPerPage, setUsersPerPage]=useState<number>(10);
+
+useEffect(() => {
+//if screen is tablet above e.g desktop, set amount of users to be displayed
+let width = window?.innerWidth;
+width > 800 && setUsersPerPage(15);
+}, []);
+
 const pagesVisited = pageNumber + usersPerPage;
 
 const pageCount:number = Math.ceil(data.length / usersPerPage);
@@ -52,7 +59,7 @@ const changePage = ({ selected }: {selected: number}) => {
 }
 
 useEffect(() => {
-    console.log("nahh");
+
     const getUsersData = async() => {
       try{
           setLoading(true);
