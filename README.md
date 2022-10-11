@@ -1,6 +1,39 @@
-# Getting Started with Create React App
+# LendSqr Web Application
+## About The Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Lendsqr is a cloud-based, Lending Platform designed for small and medium-sized lenders, providing smart features at a zero upfront cost, situated in Lagos, Nigeria.
+
+![Lendsqr logo]
+("./src/Assets/logo.svg")
+
+### Technologies
+* React.js
+* Typescript
+* React-icons
+* Scss
+* React Router
+* Context-Api - For State Management.
+
+### Routes In This App
+* `/` - This Route displays the welcome screen(Login Page).
+* `/users` - This Route displays every user in a tabular form(the dashboard).
+* `/user/:id` - This route displays a single information of a single user.
+* `*` - This Route displays a page that shows the user has navigated to a page or route that doesn't exist within the web application.
+
+### Folder Structure
+
+In the `Src`, folder structure goes:
+
+* `API` folder contains Methods for calling API with axios.
+* `Components` - This folder contains a sub-folder for different components used within our pages.
+* `Context` - This folder contains data that needs to be transferred to two or more elements, it handles state management.
+* `Pages` Folder Contains the Route Element Component.
+* `Styles` Folder contains `scss` styling for individual components.
+* `Props` - Folder Stores all typescript props.
+
+### NOTE:
+Authentication isn't connected to a backend server, so any visiting user can login with random data so as to enable them get access to information and be able to route web application.
+
 
 ## Available Scripts
 
@@ -38,9 +71,3 @@ If you aren’t satisfied with the build tool and configuration choices, you can
 Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).

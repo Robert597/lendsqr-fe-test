@@ -1,5 +1,5 @@
 import React, {createContext, useContext, useState, useEffect} from 'react';
-import { fetchUserDetail, fetchUsers } from '../API/index';
+import { fetchUserDetail, fetchUsers } from '../API/api';
 import { ProviderProps, UserData, ErrorProps, ContextProps } from '../Props/index';
 
 
