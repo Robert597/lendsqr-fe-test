@@ -43,7 +43,7 @@ padding: 20px;
     width: 100%;
     display: flex;
     justify-content: center;
-    gap: 10px;
+ 
 
     & button{
         background: $lightgreen;
@@ -52,6 +52,7 @@ padding: 20px;
         padding: 10px 25px ;
         outline: none;
         color: $white;
+        margin-right: 10px;
     }
 
     & button:first-child{

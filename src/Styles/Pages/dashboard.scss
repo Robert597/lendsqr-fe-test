@@ -60,7 +60,7 @@
         @include intermediary{
             flex-direction: column-reverse;
             align-items: center;
-            gap: 20px;
+           
         }
         & .show_details{
             color: $fadedblue;
@@ -92,6 +92,7 @@
 
             @include intermediary{
                 width: 100%;
+                margin-bottom: 20px;
             }
 
             & .page-next, .page-prev{

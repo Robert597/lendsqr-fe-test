@@ -24,9 +24,11 @@ width: 100%;
             padding: 10px 25px; 
             border-right: 1px solid $faded;
             gap: 20px;
+
             @include intermediary{
                 border: none;
             }
+            
             & img{
                 width: 60px;
                 height: 60px;

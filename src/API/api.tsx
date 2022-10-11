@@ -1,6 +1,5 @@
 import React from 'react';
-
-const Axios = require('axios').default;
+import Axios from "axios";
 
 const Api = Axios.create({ baseURL: "https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/"});
 
