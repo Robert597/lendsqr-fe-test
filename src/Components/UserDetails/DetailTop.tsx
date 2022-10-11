@@ -1,10 +1,12 @@
 import React from 'react';
-import { useDataProvider } from '../Context/UserContext';
+import { useDataProvider } from '../../Context/UserContext';
+import "../../Styles/Components/detailTop.scss";
 import StarRating from './StarRating';
-import "../Styles/Components/detailTop.scss";
 
 const DetailTop = () => {
     const {userDetail, setState, state} = useDataProvider();
+
+    //Navigators to navigate user details dashboard
     const Navigators = ["General Details", "Documents", "Bank Details", "Loans", "Savings", "App and System"];
   return (
     <div className="detail_component_top">

@@ -1,9 +1,11 @@
 import React from 'react';
-import { useDataProvider } from '../Context/UserContext';
-import "../Styles/Components/filterModal.scss";
+import { useDataProvider } from '../../Context/UserContext';
+import "../../Styles/Components/filterModal.scss";
 
 const FilterModal = ({offset}: {offset: number}) => {
     const {data} = useDataProvider();
+
+    //filterModal Width
     let boxWidth = 180;
 
   return (
@@ -57,4 +59,4 @@ const FilterModal = ({offset}: {offset: number}) => {
   )
 }
 
-export default FilterModal
+export default FilterModal;

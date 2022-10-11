@@ -1,5 +1,5 @@
 import React  from 'react'
-import { List } from '../Props';
+import { List } from '../../Props';
 import { useLocation } from 'react-router-dom';
 
 

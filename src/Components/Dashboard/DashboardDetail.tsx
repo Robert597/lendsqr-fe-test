@@ -1,6 +1,6 @@
 import React from 'react';
-import { DetailInterfaceProps } from '../Props';
-import "../Styles/Components/dashboardDetail.scss";
+import { DetailInterfaceProps } from '../../Props';
+import "../../Styles/Components/dashboardDetail.scss";
 
 
 const DashboardDetail = ({details}: DetailInterfaceProps) => {

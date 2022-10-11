@@ -1,35 +1,9 @@
 import React, {createContext, useContext, useState, useEffect} from 'react';
 import { fetchUserDetail, fetchUsers } from '../API/index';
-import { ProviderProps, UserData, ErrorProps } from '../Props/index';
+import { ProviderProps, UserData, ErrorProps, ContextProps } from '../Props/index';
 
 
-interface ContextProps{
-loading?: boolean,
-setLoading?: React.Dispatch<React.SetStateAction<boolean>>,
-error?: ErrorProps,
-data?: [] | UserData[],
-setData?: React.Dispatch<React.SetStateAction<[] | UserData[]>>,
- changePage?: ({ selected }: {
-    selected: number;
-}) => void,
-pageCount?: number,
-paginatedData?: [] | UserData[],
-pageNumber?: number,
-usersPerPage?: number,
-getDetail?: (id: string) => Promise<void>,
-userDetail?: UserData,
-setUserDetail?: React.Dispatch<React.SetStateAction<UserData>>,
-setState?: React.Dispatch<React.SetStateAction<string>>,
-state?: string,
-auth?: {
-    username: string;
-    password: string;
-},
-setAuth?: React.Dispatch<React.SetStateAction<{
-    username: string;
-    password: string;
-}>>
-}
+
 
 
 const UserContext = createContext<ContextProps>({});
@@ -41,31 +15,43 @@ const[error, setError] = useState<ErrorProps>({isError: false,
         errorMessage: ''
  });
 
+ //a state to monitor if the api has returned a data or not, we set loading true if we haven't gotten any response from the api and falseif we've gotten a response
  const[loading, setLoading] = useState(true);
 
+ //data gotten from the api is stored in this state
 const[data, setData] = useState<UserData[] | []>([]);
+
+//single user data for user detail page is stored here
 const[userDetail, setUserDetail] = useState<UserData>({});
+
+//login info, users input will automatically be stored in this state and we can use it in other components instead of hardcoding user's name.
 const[auth, setAuth] = React.useState({
     username: "",
     password: ""
 });
 
-
+//we cant display all the data at once, so we paginate them, each page data is stored here.
 const[paginatedData, setPaginatedData] = useState<UserData[] | []>([]);
 
+//current page we are on
 const[pageNumber, setPageNumber] = useState<number>(0);
+
+//number of data to show per page.
 const[usersPerPage, setUsersPerPage]=useState<number>(10);
 
 useEffect(() => {
-//if screen is tablet above e.g desktop, set amount of users to be displayed
+//if screen is tablet above e.g desktop and above, we want 15 user details displayed per page.
 let width = window?.innerWidth;
 width > 800 && setUsersPerPage(15);
 }, []);
 
+
 const pagesVisited = pageNumber + usersPerPage;
 
+//number of pages we will have
 const pageCount:number = Math.ceil(data.length / usersPerPage);
 
+//function for switching page
 const changePage = ({ selected }: {selected: number}) => {
     setPageNumber(selected);
 }
@@ -103,7 +89,7 @@ useEffect(() => {
         setPaginatedData(data.slice(pagesVisited, pagesVisited + usersPerPage));
         
     }
-}, [pageNumber, loading, data, pagesVisited]);
+}, [pageNumber, loading, data, pagesVisited, usersPerPage]);
 
 
 //function for fetching user detail

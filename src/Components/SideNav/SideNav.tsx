@@ -1,13 +1,16 @@
 import React from 'react';
 import { FaBriefcase, FaHome } from 'react-icons/fa';
 import { FiChevronDown, FiChevronRight, FiChevronLeft } from 'react-icons/fi';
-import { NavData1, NavData2, NavData3 } from '../Utils';
+import { NavData1, NavData2, NavData3 } from '../../Utils';
 import SideNavComponent from './SideNavComponen';
-import "../Styles/Components/SideNav.scss";
+import "../../Styles/Components/SideNav.scss";
 
 
 const SideNav = () => {
+
+  //state to track if side navbar is opened or closed in mobile
   const[openNav, setOpenNav] = React.useState<boolean>(false);
+  
   return (
     <div className={openNav ? "sideNav sidenav_open" :  "sideNav"}>
        <ul className='side_nav'>

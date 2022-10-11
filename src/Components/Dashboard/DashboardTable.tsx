@@ -1,16 +1,15 @@
 import React from 'react'
 import {BiFilter} from "react-icons/bi";
-import { useDataProvider } from '../Context/UserContext';
-import "../Styles/Components/dashboardTable.scss";
+import { useDataProvider } from '../../Context/UserContext';
+import "../../Styles/Components/dashboardTable.scss";
 import TableRow from "./TableRow";
+import { DashboardTableProps } from '../../Props';
 
 
 
 
-const DashboardTable = ({setShowModal, setOffset, offset, showModal}: {setShowModal: React.Dispatch<React.SetStateAction<boolean>>, setOffset: React.Dispatch<React.SetStateAction<number>>, offset: number, showModal: boolean}) => {
+const DashboardTable = ({setShowModal, setOffset, offset, showModal}: DashboardTableProps) => {
     const {paginatedData} = useDataProvider();
-
-    //status wasnt provided in the Api, adding it dynamically
    
 
     //table header Data

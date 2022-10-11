@@ -2,7 +2,7 @@ import React from 'react';
 import { HiOutlineDotsVertical } from 'react-icons/hi';
 import { FaUserCheck, FaUserTimes } from 'react-icons/fa';
 import { MdRemoveRedEye } from 'react-icons/md';
-import "../Styles/Components/tableMenuModal.scss";
+import "../../Styles/Components/tableMenuModal.scss";
 import {useNavigate} from 'react-router-dom';
 
 

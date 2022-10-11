@@ -1,13 +1,13 @@
 import React from 'react'
 import { dashboardDetails } from '../Utils/index';
-import DashboardDetail from '../Components/DashboardDetail';
-import DashboardTable from '../Components/DashboardTable';
+import DashboardDetail from '../Components/Dashboard/DashboardDetail';
+import DashboardTable from '../Components/Dashboard/DashboardTable';
 import ReactPaginate from 'react-paginate';
 import { useDataProvider } from '../Context/UserContext';
-import FilterModal from '../Components/FilterModal';
+import FilterModal from '../Components/Dashboard/FilterModal';
 import Loader from '../Components/Loader';
-import Header from '../Components/Header';
-import SideNav from '../Components/SideNav';
+import Header from '../Components/Header/Header';
+import SideNav from '../Components/SideNav/SideNav';
 import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
 import "../Styles/Pages/dashboard.scss";
 

@@ -2,9 +2,9 @@ import React from 'react';
 import {FaTimes, FaRegBell} from "react-icons/fa";
 import {FiMenu} from "react-icons/fi";
 import { MdArrowDropDown } from 'react-icons/md';
-import User from "../Assets/user.png";
-import "../Styles/Components/menuController.scss";
-import { useDataProvider } from '../Context/UserContext';
+import User from "../../Assets/user.png";
+import "../../Styles/Components/menuController.scss";
+import { useDataProvider } from '../../Context/UserContext';
 
 const MenuController = () => {
     const[showMenuModal, setShowMenuModal] = React.useState<boolean>(false);
@@ -30,7 +30,7 @@ const MenuController = () => {
 
     <div className="flex">
      <div className="avatar">
-            <img src={User} alt="User Profile Photo"/>
+            <img src={User} alt="User Profile avatar"/>
             </div>
 
             <div className="avatar_name">

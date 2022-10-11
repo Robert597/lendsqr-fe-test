@@ -1,16 +1,15 @@
 import React from 'react'
-import { useDataProvider } from '../Context/UserContext';
-import useState from 'react';
+import { useDataProvider } from '../../Context/UserContext';
 import DashboardProfile from './DashboardProfile';
 import DashboardEducation from './DashboardEducation';
 import DashboardSocial from './DashboardSocial';
 import DashboardGuarantor from './DashboardGuarantor';
-import "../Styles/Components/detailDashboard.scss";
+import "../../Styles/Components/detailDashboard.scss";
 
 const DetailDashboard = () => {
-   const {userDetail, state} = useDataProvider();
-   
-   const Navigators = ["General Details", "Documents", "Bank Details", "Loans", "Savings", "App and System"];
+   const { state} = useDataProvider();
+  
+   //state is used to monitor which navigation link we are on
   
   return (
     <div className="detail_dashboard">

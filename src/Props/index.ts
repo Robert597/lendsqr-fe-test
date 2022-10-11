@@ -1,5 +1,34 @@
 import { IconType } from "react-icons/lib";
 
+
+export interface ContextProps{
+    loading?: boolean,
+    setLoading?: React.Dispatch<React.SetStateAction<boolean>>,
+    error?: ErrorProps,
+    data?: [] | UserData[],
+    setData?: React.Dispatch<React.SetStateAction<[] | UserData[]>>,
+     changePage?: ({ selected }: {
+        selected: number;
+    }) => void,
+    pageCount?: number,
+    paginatedData?: [] | UserData[],
+    pageNumber?: number,
+    usersPerPage?: number,
+    getDetail?: (id: string) => Promise<void>,
+    userDetail?: UserData,
+    setUserDetail?: React.Dispatch<React.SetStateAction<UserData>>,
+    setState?: React.Dispatch<React.SetStateAction<string>>,
+    state?: string,
+    auth?: {
+        username: string;
+        password: string;
+    },
+    setAuth?: React.Dispatch<React.SetStateAction<{
+        username: string;
+        password: string;
+    }>>
+    }
+    
 export interface UserData{
     accountBalance?: string,
     accountNumber?: string,
@@ -67,3 +96,12 @@ export interface ErrorProps{
     iconClassName: string
    }
 }
+
+export interface DashboardTableProps {setShowModal: React.Dispatch<React.SetStateAction<boolean>>, 
+setOffset: React.Dispatch<React.SetStateAction<number>>, 
+offset: number, showModal: boolean};
+
+export interface TableMenuProps {
+    data: UserData, 
+    setShowModal: React.Dispatch<React.SetStateAction<boolean>>, 
+    setOffset: React.Dispatch<React.SetStateAction<number>>}

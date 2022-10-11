@@ -1,17 +1,19 @@
 import React from 'react';
 import { BsArrowLeft } from 'react-icons/bs';
-import DetailDashboard from '../Components/DetailDashboard';
-import DetailTop from '../Components/DetailTop';
-import Header from '../Components/Header';
-import SideNav from '../Components/SideNav';
-import {useNavigate} from "react-router-dom";
-import { useDataProvider } from '../Context/UserContext';
+import DetailDashboard from '../Components/UserDetails/DetailDashboard';
+import DetailTop from '../Components/UserDetails/DetailTop';
+import Header from '../Components/Header/Header';
+import SideNav from '../Components/SideNav/SideNav';
+import {Link, useNavigate} from "react-router-dom";
 import "../Styles/Pages/userDetail.scss";
+import { useDataProvider } from '../Context/UserContext';
+import { UserData } from '../Props';
 
 const UserDetails = () => {
-    const {userDetail} = useDataProvider();
-    console.log(userDetail);
     const navigate = useNavigate();
+    const {userDetail}  = useDataProvider();
+    
+    
   return (
     <div className="dashboard_details">
       <div className="detail_header">
@@ -22,6 +24,7 @@ const UserDetails = () => {
         <div className="detail_SideNav">
         <SideNav/>
         </div>
+       
         <div className="detail_content">
 
           <div className="detail_top_details">
@@ -38,9 +41,23 @@ const UserDetails = () => {
                   </div>
                 </div>
           </div>
+        
+          {
+          //check if user detail is empty or not
+          Object.entries(userDetail as UserData).length ? (
+            <>
         <DetailTop/>
         <DetailDashboard/>
+        </>
+         ) : (
+          <div className='no_user'> 
+            <p>No User was selected from the users page</p>
+            <p>Click <Link to="/users">Here</Link> to go and select a user on the user's page, Thank You.</p>
+          </div>
+        )
+}
         </div>
+         
       </div>
       </div>
   )

@@ -1,12 +1,14 @@
 import React from 'react';
-import Logo from "../Assets/logo.svg";
-import User from "../Assets/user.png";
+import Logo from "../../Assets/logo.svg";
+import User from "../../Assets/user.png";
 import { FaSearch, FaRegBell} from "react-icons/fa";
 import {MdArrowDropDown} from "react-icons/md";
-import "../Styles/Components/header.scss";
+import "../../Styles/Components/header.scss";
+import { useDataProvider } from '../../Context/UserContext';
 import MenuController from './MenuController';
 
 const Header = () => {
+  const {auth} = useDataProvider();
   return (
     <div className={"navbar"}>
           <div className="navbar_logo">
@@ -25,11 +27,11 @@ const Header = () => {
             <FaRegBell/>
 
             <div className="avatar">
-            <img src={User} alt="User Profile Photo"/>
+            <img src={User} alt="User Profile avatar"/>
             </div>
 
             <div className="avatar_name">
-                <p>Adedeji</p>
+                <p>{auth?.username ? auth?.username : "adedeji"}</p>
                 <MdArrowDropDown/>
             </div>
         </div>
@@ -39,4 +41,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default Header;

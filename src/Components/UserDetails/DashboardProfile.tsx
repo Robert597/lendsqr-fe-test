@@ -1,5 +1,5 @@
 import React from 'react'
-import { useDataProvider } from '../Context/UserContext';
+import { useDataProvider } from '../../Context/UserContext';
 
 const DashboardProfile = () => {
 const {userDetail} = useDataProvider();

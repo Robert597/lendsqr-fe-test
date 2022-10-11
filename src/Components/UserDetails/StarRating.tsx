@@ -20,4 +20,4 @@ const StarRating = ({starVal}: {starVal: number}) => {
   )
 }
 
-export default StarRating
+export default StarRating;
