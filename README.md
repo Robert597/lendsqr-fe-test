@@ -3,7 +3,7 @@
 
 Lendsqr is a cloud-based, Lending Platform designed for small and medium-sized lenders, providing smart features at a zero upfront cost, situated in Lagos, Nigeria.
 
-![Lendsqr logo]("/src/Assets/logo.svg")
+![Lendsqr logo](/src/Assets/logo.svg)
 
 ### Technologies
 * React.js
