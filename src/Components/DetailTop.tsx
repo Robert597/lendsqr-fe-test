@@ -1,12 +1,13 @@
 import React from 'react';
 import { useDataProvider } from '../Context/UserContext';
 import StarRating from './StarRating';
+import "../Styles/Components/detailTop.scss";
 
 const DetailTop = () => {
-    const {userDetail, setState} = useDataProvider();
+    const {userDetail, setState, state} = useDataProvider();
     const Navigators = ["General Details", "Documents", "Bank Details", "Loans", "Savings", "App and System"];
   return (
-    <div>
+    <div className="detail_component_top">
      <div className="detailTop">
         <div className="avatarContainer">
             <img src={userDetail?.profile?.avatar} alt="avatar"/>
@@ -23,14 +24,14 @@ const DetailTop = () => {
         </div>
 
         <div className="bankDetails">
-            <h1>{userDetail?.accountBalance}</h1>
+            <h1>&#8358; {userDetail?.accountBalance}</h1>
             <p>{userDetail?.accountNumber}/Providus Bank</p>
         </div>
     </div>
 
     <ul className={"detailNavigate"}>
         {Navigators.map((item, index) => (
-            <li onClick={() => setState?.(item)} key={index}>{item}</li>
+            <li onClick={() => setState?.(item)} key={index} className={state === item ? "active" : "not-active"}>{item}</li>
         ))}
     </ul>
     </div>

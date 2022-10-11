@@ -1,0 +1,76 @@
+@import "../variables.scss";
+
+.detail_dashboard{
+    width: 100%;
+    border-radius: 8px;
+    background-color: $white;
+    margin-top: 30px;
+    box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
+    padding: 30px;
+
+    @include intermediary{
+        padding: 30px 15px;
+    }
+
+    & .detail_dashboard_component{
+        & div{
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+            & h1{
+                font-size: 16px;
+                line-height: 19px;
+                color: $blue;
+                text-transform: capitalize;
+            }
+            & ul{
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                padding: 10px 0;
+                
+
+                & li{
+                    width: 25%;
+                    padding: 10px 25px;
+                    white-space: wrap;
+
+                    @include medium{
+                        width: 50%;
+                        padding: 10px;
+                    }
+
+                    @include intermediary{
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-between;
+                    }
+
+                    & p:first-child{
+                        font-size: 14px;
+                        line-height: 22px;
+                        color: $fadedblue;
+                        text-transform: capitalize;
+                    }
+
+                    & p:last-child{
+                        font-size: 15px;
+                        line-height: 20px;
+                        color: $fadedblue;
+                        font-weight: 500;
+                        word-wrap: break-word;
+
+                        @include small{
+                            font-size: 12px;
+                            line-height: 18px;
+                            word-wrap: break-word;
+                        }
+                    }
+                }
+            }
+        }
+
+        & div:last-child{
+            border: none;
+        }
+    }
+}

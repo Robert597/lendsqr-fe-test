@@ -4,9 +4,12 @@ import {FiMenu} from "react-icons/fi";
 import { MdArrowDropDown } from 'react-icons/md';
 import User from "../Assets/user.png";
 import "../Styles/Components/menuController.scss";
+import { useDataProvider } from '../Context/UserContext';
 
 const MenuController = () => {
     const[showMenuModal, setShowMenuModal] = React.useState<boolean>(false);
+
+    const{auth} = useDataProvider();
   return (
     <div className="menu">
 
@@ -31,7 +34,7 @@ const MenuController = () => {
             </div>
 
             <div className="avatar_name">
-                <p>Adedeji</p>
+                <p>{auth?.username ? auth?.username : "adedeji"}</p>
                 <MdArrowDropDown/>
             </div>
             </div>

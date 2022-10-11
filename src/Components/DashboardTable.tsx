@@ -34,7 +34,7 @@ const DashboardTable = ({setShowModal, setOffset, offset, showModal}: {setShowMo
             <tr>
             {
                 thead.map((item, index) => (
-                    <th>{item} <BiFilter 
+                    <th key={index}>{item} <BiFilter 
                     style={{cursor: "pointer"}}
                    onClick={() => {
                    moveModal(index);

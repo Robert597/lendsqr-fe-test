@@ -5,6 +5,7 @@
     margin: 0;
     padding: 0;
 }
+
 ::-webkit-input-placeholder{
     font-family: $work-sans;
     text-transform: capitalize;
@@ -16,33 +17,19 @@
     font-size: 12px;
 }
 
+html{
+    overflow-y: visible;
+}
 body{
     font-family: $work-sans;
     width: 100%;
     height: 100%;
     background-color: $white;
+    overflow-y: visible;
 }
 .filterModal{
     position: absolute;
 }
 li{
     list-style-type: none;
-}
-.star-rating{
-    button{
-        background-color: transparent;
-        border: none;
-        outline: none;
-        cursor: pointer;
-    }
-    .on{
-        color: $yellow;
-    }
-    .off{
-        color: $white;
-    }
-    .star{
-        text-stroke: 1px $yellow;
-        -webkit-text-stroke: 1px $yellow;
-    }
 }

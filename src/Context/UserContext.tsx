@@ -20,7 +20,15 @@ getDetail?: (id: string) => Promise<void>,
 userDetail?: UserData,
 setUserDetail?: React.Dispatch<React.SetStateAction<UserData>>,
 setState?: React.Dispatch<React.SetStateAction<string>>,
-state?: string
+state?: string,
+auth?: {
+    username: string;
+    password: string;
+},
+setAuth?: React.Dispatch<React.SetStateAction<{
+    username: string;
+    password: string;
+}>>
 }
 
 
@@ -37,6 +45,10 @@ const[error, setError] = useState<ErrorProps>({isError: false,
 
 const[data, setData] = useState<UserData[] | []>([]);
 const[userDetail, setUserDetail] = useState<UserData>({});
+const[auth, setAuth] = React.useState({
+    username: "",
+    password: ""
+});
 
 
 const[paginatedData, setPaginatedData] = useState<UserData[] | []>([]);
@@ -59,12 +71,19 @@ const changePage = ({ selected }: {selected: number}) => {
 }
 
 useEffect(() => {
-
     const getUsersData = async() => {
       try{
-          setLoading(true);
+        setLoading(true);
+        //check if data is stored in local storage
+        if(localStorage.getItem('userDatas')){
+            setData(JSON.parse(localStorage.getItem('userDatas') as string));
+        }else{
+            //call api
           const users = await fetchUsers();
-          setData(users?.data)
+          setData(users?.data);
+          //store data in the local storage
+            localStorage.setItem('userDatas', JSON.stringify(users?.data));
+        }
       }catch(err){
           setError({
               isError: true,
@@ -91,8 +110,13 @@ useEffect(() => {
 const getDetail = async (id:string) => {
     try{
         setLoading(true);
+        if(localStorage.getItem('userDatas')){
+           let detail =  data?.filter(data => data?.id == id);
+           setUserDetail(detail[0]);
+        } else {
         const detail = await fetchUserDetail(id);
         setUserDetail(detail?.data);
+        }
     }catch(err) {
         setError({
             isError: true,
@@ -108,7 +132,7 @@ const[state, setState] = React.useState<string>("General Details");
 
 
     return (
-        <UserContext.Provider value={{loading, setLoading, error, data, setData, changePage, pageCount, paginatedData, pageNumber, usersPerPage, getDetail, userDetail, setUserDetail, state, setState}}>
+        <UserContext.Provider value={{loading, setLoading, error, data, setData, changePage, pageCount, paginatedData, pageNumber, usersPerPage, getDetail, userDetail, setUserDetail, state, setState, auth, setAuth}}>
             {children}
         </UserContext.Provider>
     )

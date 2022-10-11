@@ -1,0 +1,169 @@
+@import "../variables.scss";
+.detail_component_top{
+    width: 100%;
+    background-color: $white;
+    box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
+    border-radius: 8px;
+    padding: 10px 20px;
+
+   
+    & .detailTop{
+        display: flex;
+padding: 20px 0;
+width: 100%;
+
+
+@include medium{
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+        & .avatarContainer{
+            display: flex;
+            align-items: center;
+            padding: 10px 25px; 
+            border-right: 1px solid $faded;
+            gap: 20px;
+            @include intermediary{
+                border: none;
+            }
+            & img{
+                width: 60px;
+                height: 60px;
+                object-fit: cover;
+                border-radius: 50%;
+            }
+
+            & .avatarDetails{
+                & h1{
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 28px;
+                    line-height: 32px;
+                    color: $blue;
+
+                    @include small{
+                        font-size: 20px;
+                        line-height: 24px;
+                    }
+                }
+                & p{
+                    color: $faded;
+                }
+            }
+
+            @include medium{
+                width: 50%;
+            }
+            @include intermediary{
+                width: 100%;
+            }
+        }
+
+        & .starComponent{
+            padding: 10px 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            @include medium {
+              border: none;
+            }
+            @include intermediary{
+                align-items: flex-start;
+         }
+            & p{
+                font-size: 18px;
+                    line-height: 20px;
+                    color: $blue;
+                    font-weight: 500;
+            }
+
+           & .star-rating{
+                button{
+                    background-color: transparent;
+                    border: none;
+                    outline: none;
+                    cursor: pointer;
+                    margin-right: 7px;
+                }
+                .on{
+                    color: $yellow;
+                }
+                .off{
+                    color: $white;
+                }
+                .star{
+                    text-stroke: 1px $yellow;
+                    -webkit-text-stroke: 1px $yellow;
+                }
+            }
+            @include medium{
+                width: 50%;
+            }
+            @include intermediary{
+                width: 100%;
+            }
+        }
+
+        & .bankDetails{
+            padding: 10px 25px;
+
+            & h1{
+                font-style: normal;
+                font-weight: 500;
+                font-size: 28px;
+                line-height: 32px;
+                color: $blue;
+
+                @include small{
+                    font-size: 20px;
+                    line-height: 24px;
+                }
+            }
+
+            & p{
+                color: $fadedblue;
+                font-size: 14px;
+            }
+            @include medium{
+                width: 50%;
+            }
+            @include intermediary{
+                width: 100%;
+            }
+        }
+     
+    }
+    & .detailNavigate{
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+
+        @include intermediary{
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        & li{
+            cursor: pointer;
+            padding: 5px 10px;
+            transition: all .2s ease-in-out;
+            color: $faded;
+
+            @include intermediary{
+                width: 50%;
+                padding: 10px;
+            }
+            @include small{
+                font-size: 14px;
+
+            }
+        }
+        & .active{
+            color: $lightgreen;
+            border-bottom: 2px solid $lightgreen;
+        }
+    }
+}
