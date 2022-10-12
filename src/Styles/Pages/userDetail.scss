@@ -64,7 +64,6 @@
                     @include medium{
                         flex-direction: column;
                         align-items: flex-start;
-                        gap: 30px;
                     }
                     & h1{
                     font-style: normal;
@@ -72,6 +71,12 @@
                     font-size: 28px;
                     line-height: 32px;
                     color: $blue;
+                    }
+
+                    & .detail_buttons{
+                       @include medium {
+                        margin-top: 25px;
+                       } 
                     }
 
                     & button{

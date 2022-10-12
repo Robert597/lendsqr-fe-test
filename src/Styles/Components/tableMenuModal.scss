@@ -1,6 +1,7 @@
 @import "../variables.scss";
 .table_modal{
 cursor: pointer;
+position: relative;
     & .absoluteChild{
         background: #FFFFFF;
         border: 1px solid rgba(84, 95, 125, 0.04);
@@ -11,6 +12,10 @@ cursor: pointer;
         height: 130px;
         left: -150px;
         z-index: 5;
+
+        @include medium{
+            left: -100px;
+        }
 
         & li{
             font-weight: 500;
